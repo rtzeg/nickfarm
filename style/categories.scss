@@ -1,0 +1,90 @@
+@import "./layout.scss";
+
+header {
+    z-index: 10;
+}
+
+main {
+    padding: 20px 10px;
+    .about {
+        h1 {
+            @include mf(87px, black, 100%, 400);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        padding-top: 112px;
+
+        @include flex(center, center, column);
+        .card {
+            gap: 20px;
+            @include flex(space-between, center, row);
+            img {
+                width: 40%;
+            }
+            margin-bottom: 30px;
+            .about_card {
+                h2 {
+                    @include mf(40px, black, 130%, 700);
+                }
+                height: 400px;
+                @include flex(space-around, flex-start, column);
+                p {
+                    @include ft(16px, black, 130%, 300);
+                }
+                button {
+                    background-color: $hov;
+                    padding: 16px 30px;
+                    border-radius: 10px;
+                    border: 1px solid $hov;
+                    @include mf(24px, $w, 90%, 400);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        .about {
+            .card {
+                flex-direction: column;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 520px) {
+    main {
+        .about {
+            h1 {
+                font-size: 40px;
+            }
+            .card {
+                .about_card {
+                    button {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 390px) {
+    main {
+        .about {
+            .card {
+                .about_card {
+                    h2 {
+                        @include mf(32px, black, 130%, 700);
+                    }
+                    button{
+                        margin: 10px 0;
+                    }
+                }
+            }
+        }
+    }
+}

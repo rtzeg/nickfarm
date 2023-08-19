@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+// font-family: 'Roboto', sans-serif;
+
+@font-face {
+    font-family: "Marker Felt";
+    src: url(../font/Marker\ Felt.ttf);
+}
+// миксин
+@mixin ft($fs, $c, $lh, $fw) {
+    font-size: $fs;
+    color: $c;
+    font-family: "Roboto", sans-serif;
+    line-height: $lh;
+    font-weight: $fw;
+}
+@mixin mf($fs, $c, $lh, $fw) {
+    font-size: $fs;
+    color: $c;
+    font-family: "Marker Felt", sans-serif;
+    line-height: $lh;
+    font-weight: $fw;
+}
+
+@mixin flex($sb, $ai, $fd) {
+    display: flex;
+    justify-content: $sb;
+    align-items: $ai;
+    flex-direction: $fd;
+}
+$w: #ffffff;
+$main: #557084;
+$hov: #91af5f;
+
+// header
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    padding: 10px 20px;
+    background-color: $main;
+    height: 112px;
+    @include flex(space-between, center, row);
+    nav {
+        width: 62%;
+        ul {
+            width: 100%;
+
+            @include flex(space-between, center, row);
+            li a {
+                display: block;
+                width: 175px;
+                @include ft(16px, $w, 150%, 300);
+            }
+        }
+    }
+    .conact {
+        @include flex(space-between, center, column);
+        a {
+            color: $w;
+            @include ft(24px, $w, 130%, 700);
+        }
+        .social_media {
+            align-self: flex-end;
+            gap: 20px;
+            @include flex(space-between, center, row);
+        }
+    }
+}
+.burg_menu {
+    display: none;
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+.item {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    border: 1px solid $w;
+    background-color: $w;
+    transition: all 0.3s ease;
+}
+.top {
+    top: 0;
+}
+.top_active {
+    top: 50%;
+    transform: rotate(45deg);
+}
+.mid {
+    top: 50%;
+}
+.mid_active {
+    display: none;
+}
+.bot {
+    top: 100%;
+}
+.bot_active {
+    top: 50%;
+    transform: rotate(-45deg);
+}
+
+// footer
+footer {
+    padding: 10px 20px;
+    background-color: $main;
+    @include flex(space-between, flex-start, row);
+    .left_content {
+        @include flex(space-between, flex-start, column);
+        a {
+            opacity: 0.6000000238418579;
+            @include ft(16px, $w, 150%, 500);
+            transition: 300ms ease-in-out all;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        .link_footet {
+            @include flex(space-between, flex-start, column);
+        }
+    }
+    .right_content {
+        width: 80%;
+        @include flex(center, flex-start, column);
+        .footer_link {
+            width: 100%;
+            margin-bottom: 15px;
+            @include flex(space-between, flex-start, row);
+            .foter_content {
+                @include flex(space-between, flex-start, column);
+                h3 {
+                    @include mf(24px, $w, 150%, 700);
+                }
+                p a {
+                    @include ft(24px, $w, 150%, 400);
+                    opacity: 1;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+                a {
+                    opacity: 0.6000000238418579;
+                    @include ft(16px, $w, 150%, 200);
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+                label {
+                    @include ft(12px, $w, 150%, 400);
+                    opacity: 0.6000000238418579;
+                }
+            }
+        }
+        .footer_link_bottom {
+            width: 100%;
+            @include flex(center, flex-start, column);
+            .footer_link_bottom_content {
+                width: 100%;
+                @include flex(space-between, flex-start, row);
+                p {
+                    cursor: pointer;
+                    &:hover {
+                        opacity: 1;
+                    }
+                    @include ft(12px, $w, 150%, 500);
+                    opacity: 0.6000000238418579;
+                    a {
+                        @include ft(12px, $w, 150%, 400);
+                    }
+                }
+            }
+            .creater {
+                width: 100%;
+                @include flex(space-between, center, row);
+
+                p {
+                    @include ft(12px, $w, 150%, 500);
+                    opacity: 0.6000000238418579;
+                }
+                .cr {
+                    span {
+                        @include ft(12px, $w, 150%, 500);
+                        opacity: 0.6000000238418579;
+                    }
+                    @include flex(center, center, row);
+                }
+            }
+        }
+    }
+}
+
+
+
+.modal {
+    background-color: $main;
+    position: fixed;
+    padding: 30px;
+    top: -100vh;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 9;
+    display: none;
+    margin: 0 auto;
+    ul {
+        margin-top: 30px;
+        li {
+            a {
+                @include ft(16px, white, 130%, 400);
+                opacity: 0.7;
+            }
+        }
+    }
+}
+.modal_pos {
+    transition: all 300ms ease-in-out;
+    top: 0 !important;
+}
+// 1280
+@media screen and (max-width: 1280px) {
+    header {
+        nav {
+            ul {
+                li a {
+                    width: 115px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 920px) {
+    footer {
+        .right_content {
+            .footer_link_bottom {
+                .footer_link_bottom_content {
+                    height: 120px;
+                    @include flex(space-between, flex-start, column);
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    header {
+        nav {
+            display: none;
+        }
+        .conact {
+            display: none;
+        }
+    }
+    .burg_menu {
+        display: block;
+    }
+    footer {
+        @include flex(space-between, flex-start, column);
+        margin: 0 auto;
+        .left_content {
+            width: 100%;
+            @include flex(space-between, flex-start, row);
+            border-bottom: $w 1px solid;
+            .link_footet {
+                @include ft(16px, $w, 20px, 500);
+            }
+        }
+        .right_content {
+            width: 100%;
+            .footer_link {
+                @include flex(space-between, flex-start, row);
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .footer_link_bottom {
+                .creater {
+                    @include flex(space-between, flex-start, column);
+                }
+            }
+        }
+    }
+    .modal {
+        transition: all 300ms ease-in-out;
+      @include flex(space-around, center, column);
+      ul {
+          height: 60%;
+          padding: 20px;
+          @include flex(space-around, center, column);
+      }
+      .conact2 {
+          width: 100%;
+          height: 150px;
+          @include flex(space-between, flex-start, column);
+          .about_contact {
+              @include ft(32px, white, 130%, 400);
+          }
+          a {
+              @include ft(24px, white, 130%, 400);
+              opacity: 0.6;
+          }
+          .social_media {
+              width: 100%;
+              @include flex(space-between, center, row);
+              a {
+                  opacity: 1;
+              }
+          }
+      }
+  }
+}
+@media screen and (max-width: 390px) {
+   .modal{
+    ul{
+        @include flex(space-around, flex-start, column);
+    }
+   }
+}
+
+

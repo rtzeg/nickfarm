@@ -1,0 +1,506 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: "Marker Felt";
+  src: url(../font/Marker\ Felt.ttf);
+}
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  padding: 10px 20px;
+  background-color: #557084;
+  height: 112px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+header nav {
+  width: 62%;
+}
+header nav ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+header nav ul li a {
+  display: block;
+  width: 175px;
+  font-size: 16px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  line-height: 150%;
+  font-weight: 300;
+}
+header .conact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+header .conact a {
+  color: #ffffff;
+  font-size: 24px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  line-height: 130%;
+  font-weight: 700;
+}
+header .conact .social_media {
+  align-self: flex-end;
+  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.burg_menu {
+  display: none;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.item {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.top {
+  top: 0;
+}
+
+.top_active {
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.mid {
+  top: 50%;
+}
+
+.mid_active {
+  display: none;
+}
+
+.bot {
+  top: 100%;
+}
+
+.bot_active {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+
+footer {
+  padding: 10px 20px;
+  background-color: #557084;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+}
+footer .left_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+footer .left_content a {
+  opacity: 0.6000000238;
+  font-size: 16px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  line-height: 150%;
+  font-weight: 500;
+  transition: 300ms ease-in-out all;
+}
+footer .left_content a:hover {
+  opacity: 1;
+}
+footer .left_content .link_footet {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+footer .right_content {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+footer .right_content .footer_link {
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+}
+footer .right_content .footer_link .foter_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+footer .right_content .footer_link .foter_content h3 {
+  font-size: 24px;
+  color: #ffffff;
+  font-family: "Marker Felt", sans-serif;
+  line-height: 150%;
+  font-weight: 700;
+}
+footer .right_content .footer_link .foter_content p a {
+  font-size: 24px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  line-height: 150%;
+  font-weight: 400;
+  opacity: 1;
+}
+footer .right_content .footer_link .foter_content p a:hover {
+  opacity: 1;
+}
+footer .right_content .footer_link .foter_content a {
+  opacity: 0.6000000238;
+  font-size: 16px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  line-height: 150%;
+  font-weight: 200;
+}
+footer .right_content .footer_link .foter_content a:hover {
+  opacity: 1;
+}
+footer .right_content .footer_link .foter_content label {
+  font-size: 12px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  line-height: 150%;
+  font-weight: 400;
+  opacity: 0.6000000238;
+}
+footer .right_content .footer_link_bottom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+footer .right_content .footer_link_bottom .footer_link_bottom_content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+}
+footer .right_content .footer_link_bottom .footer_link_bottom_content p {
+  cursor: pointer;
+  font-size: 12px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  line-height: 150%;
+  font-weight: 500;
+  opacity: 0.6000000238;
+}
+footer .right_content .footer_link_bottom .footer_link_bottom_content p:hover {
+  opacity: 1;
+}
+footer .right_content .footer_link_bottom .footer_link_bottom_content p a {
+  font-size: 12px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  line-height: 150%;
+  font-weight: 400;
+}
+footer .right_content .footer_link_bottom .creater {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+footer .right_content .footer_link_bottom .creater p {
+  font-size: 12px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  line-height: 150%;
+  font-weight: 500;
+  opacity: 0.6000000238;
+}
+footer .right_content .footer_link_bottom .creater .cr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+footer .right_content .footer_link_bottom .creater .cr span {
+  font-size: 12px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  line-height: 150%;
+  font-weight: 500;
+  opacity: 0.6000000238;
+}
+
+.modal {
+  background-color: #557084;
+  position: fixed;
+  padding: 30px;
+  top: -100vh;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 9;
+  display: none;
+  margin: 0 auto;
+}
+.modal ul {
+  margin-top: 30px;
+}
+.modal ul li a {
+  font-size: 16px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  line-height: 130%;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.modal_pos {
+  transition: all 300ms ease-in-out;
+  top: 0 !important;
+}
+
+@media screen and (max-width: 1280px) {
+  header nav ul li a {
+    width: 115px;
+  }
+}
+@media screen and (max-width: 920px) {
+  footer .right_content .footer_link_bottom .footer_link_bottom_content {
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  header nav {
+    display: none;
+  }
+  header .conact {
+    display: none;
+  }
+  .burg_menu {
+    display: block;
+  }
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  footer .left_content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    border-bottom: #ffffff 1px solid;
+  }
+  footer .left_content .link_footet {
+    font-size: 16px;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    line-height: 20px;
+    font-weight: 500;
+  }
+  footer .right_content {
+    width: 100%;
+  }
+  footer .right_content .footer_link {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  footer .right_content .footer_link_bottom .creater {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .modal {
+    transition: all 300ms ease-in-out;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  .modal ul {
+    height: 60%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  .modal .conact2 {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .modal .conact2 .about_contact {
+    font-size: 32px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    line-height: 130%;
+    font-weight: 400;
+  }
+  .modal .conact2 a {
+    font-size: 24px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    line-height: 130%;
+    font-weight: 400;
+    opacity: 0.6;
+  }
+  .modal .conact2 .social_media {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  .modal .conact2 .social_media a {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 390px) {
+  .modal ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+header {
+  z-index: 10;
+}
+
+main {
+  padding: 20px 10px;
+}
+main .about {
+  padding-top: 112px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .about h1 {
+  font-size: 87px;
+  color: black;
+  font-family: "Marker Felt", sans-serif;
+  line-height: 100%;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 50px;
+}
+main .about .card {
+  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+main .about .card img {
+  width: 40%;
+}
+main .about .card .about_card {
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+}
+main .about .card .about_card h2 {
+  font-size: 40px;
+  color: black;
+  font-family: "Marker Felt", sans-serif;
+  line-height: 130%;
+  font-weight: 700;
+}
+main .about .card .about_card p {
+  font-size: 16px;
+  color: black;
+  font-family: "Roboto", sans-serif;
+  line-height: 130%;
+  font-weight: 300;
+}
+main .about .card .about_card button {
+  background-color: #91af5f;
+  padding: 16px 30px;
+  border-radius: 10px;
+  border: 1px solid #91af5f;
+  font-size: 24px;
+  color: #ffffff;
+  font-family: "Marker Felt", sans-serif;
+  line-height: 90%;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 768px) {
+  main .about .card {
+    flex-direction: column;
+  }
+  main .about .card img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 520px) {
+  main .about h1 {
+    font-size: 40px;
+  }
+  main .about .card .about_card button {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 390px) {
+  main .about .card .about_card h2 {
+    font-size: 32px;
+    color: black;
+    font-family: "Marker Felt", sans-serif;
+    line-height: 130%;
+    font-weight: 700;
+  }
+  main .about .card .about_card button {
+    margin: 10px 0;
+  }
+}/*# sourceMappingURL=categories.css.map */
